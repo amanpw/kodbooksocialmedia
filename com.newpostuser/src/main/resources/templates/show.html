@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+       
+       <div th:each="post1:${post}">
+       
+       <strong th:text="${post1.program}"></strong>
+       
+       <img th:if="${post1.photoBase64}" 
+        th:src=" 'data:image/jpeg;base64,' + ${post1.photoBase64}" 
+        alt="Profile Photo" />
+        <p th:if="${!post1.photoBase64}">No photo available</p>
+        
+    </div>
+</body>
+</html>
